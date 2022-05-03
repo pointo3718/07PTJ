@@ -74,7 +74,7 @@
 		</td>
 		<td bgcolor="D6D6D6" width="1"></td>
 		<%-- <td class="ct_write01"><%=vo.getFileName() %> --%>
-		<td class="ct_write01">${product.fileName}>
+		<td class="ct_write01">${product.fileName}
 			<!-- <img src = "/images/uplo0adFiles/../../images/empty.GIF"/> -->
 		</td>
 	</tr>

@@ -2,13 +2,6 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%-- <%@ page import="com.model2.mvc.service.domain.Purchase" %> --%>
-
-<%-- <% 
-	Purchase purchase =(Purchase)request.getAttribute("purchase"); 
-	System.out.println("jsp"+purchase);
-%> --%>
-
 <html>
 <head>
 <link rel="stylesheet" href="/css/admin.css" type="text/css">
@@ -28,8 +21,7 @@ function fncUpdatePurchase() {
 
 <body bgcolor="#ffffff" text="#000000">
 
-<%-- <form name="updatePurchase" method="post"	action="/updatePurchase.do?tranNo=<%= purchase.getTranNo() %>"> --%>
-<form name="updatePurchase" method="post"	action="/updatePurchase.do?tranNo=${purchase.tranNo}">
+<form name="updatePurchase" method="post"	action="/purchase/updatePurchase?tranNo=${purchase.tranNo}">
 
 <table width="100%" height="37" border="0" cellpadding="0" cellspacing="0">
 	<tr>
@@ -57,9 +49,7 @@ function fncUpdatePurchase() {
 	<tr>
 		<td width="104" class="ct_write">구매자아이디</td>
 		<td bgcolor="D6D6D6" width="1"></td>
-		<%-- <td class="ct_write01"><%=purchase.getBuyerId().getUserId()%></td> --%>
 		<td class="ct_write01">${purchase.buyerId.userId}</td>
-		<%-- <input type="hidden" name="buyerId" value="<%=purchase.getBuyerId().getUserId()%>"/> --%>
 		<input type="hidden" name="buyer.userId" value="${purchase.buyerId.userId}">
 	</tr>
 	<tr>
@@ -84,7 +74,6 @@ function fncUpdatePurchase() {
 		<td bgcolor="D6D6D6" width="1"></td>
 		<td class="ct_write01">
 			<input 	type="text" name="receiverName" 	class="ct_input_g" style="width: 100px; height: 19px" 
-							<%-- maxLength="20" value="<%= purchase.getReceiverName() %>" /> --%>
 							maxLength="20" value="${purchase.receiverName}" />
 		</td>
 	</tr>
@@ -96,7 +85,6 @@ function fncUpdatePurchase() {
 		<td bgcolor="D6D6D6" width="1"></td>
 		<td class="ct_write01">
 			<input 	type="text" name="receiverPhone" class="ct_input_g" style="width: 100px; height: 19px" 
-							<%-- maxLength="20" value="<%= purchase.getReceiverPhone() %>" /> --%>
 							maxLength="20" value="${purchase.receiverPhone}" />
 		</td>
 	</tr>
@@ -109,7 +97,6 @@ function fncUpdatePurchase() {
 		<td bgcolor="D6D6D6" width="1"></td>
 		<td class="ct_write01">
 			<input 	type="text" name="divyAddr" class="ct_input_g" style="width: 100px; height: 19px" 
-							<%-- maxLength="20" value="<%= purchase.getDivyAddr() %>" /> --%>
 							maxLength="20" value="${purchase.divyAddr}" />
 		</td>
 	</tr>
@@ -121,7 +108,6 @@ function fncUpdatePurchase() {
 		<td bgcolor="D6D6D6" width="1"></td>
 		<td class="ct_write01">
 			<input 	type="text" name="divyRequest" 	class="ct_input_g" style="width: 100px; height: 19px" 
-							<%-- maxLength="20" value="<%= purchase.getDivyRequest() %>" /> --%>
 							maxLength="20" value="${purchase.divyRequest}" />
 		</td>
 	</tr>
@@ -153,7 +139,6 @@ function fncUpdatePurchase() {
 					<img src="/images/ct_btnbg01.gif" width="17" height="23"/>
 				</td>
 				<td background="/images/ct_btnbg02.gif" class="ct_btn01"	style="padding-top: 3px;">
-					<!-- <input type="submit" value="수정"/> -->
 					<a href="javascript:fncUpdatePurchase();">수정</a>
 				</td>
 				<td width="14" height="23">

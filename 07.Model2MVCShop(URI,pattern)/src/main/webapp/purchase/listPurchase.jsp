@@ -62,9 +62,9 @@ function fncGetList(currentPage) {
 	<c:forEach var="purchase" items="${list}">
 		<c:set var="i" value="${i+1}"/>
 		<tr class="ct_list_pop">
-		<td align="center"><a href="/getPurchase.do?tranNo=${purchase.tranNo}">${ i }</td>
+		<td align="center"><a href="/purchase/getPurchase?tranNo=${purchase.tranNo}">${ i }</td>
 		<td></td>
-		<td align="left"><a href="/getUser.do?userId=${purchase.buyerId.userId}">${purchase.buyerId.userId}</a></td>
+		<td align="left"><a href="/user/getUser?userId=${purchase.buyerId.userId}">${purchase.buyerId.userId}</a></td>
 		<td></td>
 		<td align="left">${purchase.receiverName}</td>
 		<td></td>
@@ -81,7 +81,7 @@ function fncGetList(currentPage) {
 		<td></td>
 		<td align="left">
 			<c:if test="${purchase.tranCode.trim()  eq '2'}">
-				<a href="/updateTranCode.do?prodNo=${purchase.purchaseProd.prodNo}&tranCode=3">¹°°ÇµµÂø</a>
+				<a href="/purchase/updateTranCode?prodNo=${purchase.purchaseProd.prodNo}&tranCode=3">¹°°ÇµµÂø</a>
 			</c:if>
 		</td>
 		<tr>
